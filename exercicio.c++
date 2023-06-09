@@ -1,17 +1,33 @@
 #include <iostream>
+
 using namespace std;
-int main()
-{
-    int x, soma;
-    soma = 0;
-    cout << "Digite o primeiro numero: ";
-    cin >> x;
-    while (x != 0)
-    {
-        soma = soma + x;
-        cout << "Digite outro numero: ";
-        cin >> x;
+
+int main(){
+    int m, n;
+
+    cout << "Qual a quantidade de linhas da matriz? ";
+    cin >> m;
+    cout << "Qual a quantidade de colunas da matriz? ";
+    cin >> n;
+
+    int matriz[m][n];
+
+    for (int i=0; i<m; i++) {
+        for (int j=0; j<n; j++) {
+            cout << "Elemento [" << i << "," << j << "]: ";
+            cin >> matriz[i][j];
+        }
     }
-    cout << "SOMA = " << soma;
+
+    cout << "VALORES NEGATIVOS:" << endl;
+
+    for (int i=0; i<m; i++) {
+        for (int j=0; j<n; j++) {
+            if(matriz[i][j] < 0){
+                cout << matriz[i][j] << endl;
+            }
+        }
+    }
+
     return 0;
 }
